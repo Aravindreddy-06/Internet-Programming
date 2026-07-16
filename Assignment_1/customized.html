@@ -5,56 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to My Website</title>
     <style>
-        /* Global Framework Styles */
+        /* Global Framework Styles & Premium Color Token Gradients */
         body {
             margin: 0;
-            padding: 40px 20px;
-            background-color: #e0f2fe; /* Light Blue Background */
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 100%); /* Blue to Soft Emerald Mint Gradient */
             font-family: Cambria, Georgia, serif; 
-            font-size: 14px; /* Explicit 14px Base Font Size */
-            color: #1e3a8a; /* Deep Blue Text Accent */
+            font-size: 14px; 
+            color: #0f172a; 
             
-            /* CSS Grid to center-align everything vertically and horizontally */
             display: grid;
             place-items: center;
             min-height: 100vh;
             box-sizing: border-box;
         }
 
-        /* Center Content Card Layout */
+        /* Upgraded Container Layout */
         .container {
             display: grid;
-            gap: 24px;
+            gap: 28px;
             justify-items: center;
             text-align: center;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.15);
-            max-width: 750px; /* Balanced layout width for dual grid columns */
+            background: rgba(255, 255, 255, 0.95);
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.1), 0 15px 20px -20px rgba(37, 99, 235, 0.1);
+            max-width: 900px; /* Expanded space boundary window */
             width: 100%;
-            border: 1px solid #bfdbfe;
+            border: 1px solid #bae6fd;
+            backdrop-filter: blur(8px);
         }
 
         h1 {
-            color: #1d4ed8; 
+            background: linear-gradient(to right, #1d4ed8, #059669); /* Multi-color sapphire to emerald text gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin: 0;
-            font-size: 32px;
+            font-size: 38px;
+            font-weight: 800;
         }
 
         .tagline {
-            color: #2563eb;
+            color: #047857; /* Deep Mint accent */
             font-style: italic;
-            margin: -12px 0 0 0;
+            font-size: 16px;
+            margin: -16px 0 0 0;
         }
 
-        /* CSS Scrolling Text (Ticker Layout) */
+        /* CSS Scrolling Text Window */
         .ticker-window {
             width: 100%;
             overflow: hidden; 
-            background-color: #eff6ff; 
-            padding: 10px 0;
-            border-radius: 8px;
+            background: linear-gradient(90deg, #eff6ff 0%, #f0fdf4 100%);
+            padding: 12px 0;
+            border-radius: 12px;
             border: 1px solid #93c5fd;
         }
 
@@ -63,8 +67,8 @@
             white-space: nowrap;
             padding-left: 100%;
             font-weight: bold;
-            color: #1d4ed8;
-            animation: move-left 14s linear infinite; 
+            color: #1e40af;
+            animation: move-left 16s linear infinite; 
         }
 
         @keyframes move-left {
@@ -72,62 +76,78 @@
             100% { transform: translate3d(-100%, 0, 0); }
         }
 
-        /* 2-Column Grid Layout for Content Feature Boxes */
+        /* 4-Box Structural Multi-Column Grid Layout */
         .info-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two columns of equal size side-by-side */
-            gap: 20px;
+            grid-template-columns: 1fr 1fr; /* Two distinct side-by-side content fields */
+            gap: 24px;
             width: 100%;
-            margin: 10px 0;
+            margin: 15px 0;
         }
 
-        /* Custom Information Grid Box Styling */
+        /* Specialized Interactive Info Boxes */
         .info-box {
-            background-color: #f8fafc; /* Very light slate tint */
-            padding: 24px;
-            border-radius: 10px;
-            border-top: 4px solid #2563eb; /* Highlighting top edge blue */
-            text-align: left; /* Aligned left for natural documentation parsing */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            transition: transform 0.2s ease;
+            background-color: #ffffff;
+            padding: 26px;
+            border-radius: 14px;
+            text-align: left; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        /* Theme variation styles injected dynamically across coordinates */
+        .box-html { border-left: 5px solid #ef4444; } /* Crimson Accent */
+        .box-css  { border-left: 5px solid #3b82f6; } /* Cobalt Blue Accent */
+        .box-js   { border-left: 5px solid #eab308; } /* Golden Amber Accent */
+        .box-resp { border-left: 5px solid #10b981; } /* Emerald Green Accent */
 
         .info-box:hover {
-            transform: translateY(-2px); /* Subtle elevation adjustment on user hover focus */
+            transform: translateY(-4px); 
+            box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.15);
         }
 
         .info-box h3 {
-            margin: 0 0 10px 0;
-            color: #1e3a8a;
-            font-size: 18px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 6px;
+            margin: 0 0 12px 0;
+            font-size: 19px;
+            padding-bottom: 8px;
         }
+        
+        /* Direct semantic color allocations targeting specific headers */
+        .box-html h3 { color: #991b1b; border-bottom: 1px solid #fee2e2; }
+        .box-css h3  { color: #1e3a8a; border-bottom: 1px solid #dbeafe; }
+        .box-js h3   { color: #713f12; border-bottom: 1px solid #fef9c3; }
+        .box-resp h3 { color: #065f46; border-bottom: 1px solid #d1fae5; }
 
         .info-box p {
             margin: 0;
             color: #475569;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Blue Button with White Text */
+        /* Premium Blue Action Button */
         .btn-action {
-            background-color: #2563eb; 
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: #ffffff; 
             font-family: Cambria, Georgia, serif;
             font-size: 14px;
             font-weight: bold;
-            padding: 12px 36px;
+            padding: 14px 44px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
             transition: all 0.2s ease;
         }
 
         .btn-action:hover {
-            background-color: #1d4ed8;
-            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+            transform: scale(1.02);
+        }
+        
+        .btn-action:active {
+            transform: scale(0.98);
         }
     </style>
 </head>
@@ -135,37 +155,53 @@
 
     <div class="container">
         <h1>Welcome to My Website</h1>
-        <p class="tagline">A Structural Guide to Basic Web Foundations</p>
+        <p class="tagline">The Complete Ecosystem of Frontend Development</p>
         
         <!-- Smooth Accelerated CSS Scrolling Banner -->
         <div class="ticker-window">
             <div class="ticker-stream">
-                💡 Learning Focus: HTML5 provides structural layout semantic definitions • CSS3 manages structural design, styling rules, and grid coordinates. 🚀
+                🌟 CORE ROSTER: HTML5 (Structure) • CSS3 (Style & Grid Matrix) • JavaScript (Logic Engines) • Responsive Layouts (Fluidity across computing systems) 🚀
             </div>
         </div>
 
-        <!-- 2-Column Responsive Information Grid Box Layer -->
+        <!-- Expanded 4-Box Information Matrix Layer -->
         <div class="info-grid">
             
-            <!-- Box 1: HTML Architecture -->
-            <div class="info-box">
-                <h3>What is HTML?</h3>
+            <!-- Box 1: HTML -->
+            <div class="info-box box-html">
+                <h3>1. HTML Structure</h3>
                 <p>
-                    HTML stands for <strong>HyperText Markup Language</strong>. It acts as the backbone or skeletal structural element of every web page. Using markup elements called tags, it explicitly outlines what content should appear on the screen—such as text headings, media paragraphs, action fields, links, and text structures.
+                    HTML represents the absolute structural skeleton. By utilizing precise semantic tags, it establishes document zones, anchors text headers, frames article contents, and hosts active multimedia pipelines.
                 </p>
             </div>
 
-            <!-- Box 2: CSS Presentation -->
-            <div class="info-box">
-                <h3>What is CSS?</h3>
+            <!-- Box 2: CSS -->
+            <div class="info-box box-css">
+                <h3>2. CSS Presentation</h3>
                 <p>
-                    CSS stands for <strong>Cascading Style Sheets</strong>. If HTML is the skeleton, CSS represents the aesthetic clothing and spatial layout layout model. It allows developers to specify layout behaviors (like Grid Box layouts), typography styling selections, base sizing values, custom color palettes, background gradients, and smooth animation loops.
+                    CSS rules define spatial presentation and style sheets. It maps out coordinate boundaries via nested layout frameworks, deploys color values, updates typography weights, and manages UI aesthetics.
+                </p>
+            </div>
+
+            <!-- Box 3: JavaScript -->
+            <div class="info-box box-js">
+                <h3>3. JS Interaction</h3>
+                <p>
+                    JavaScript injects active execution properties and application logic directly into the document stack. It intercepts user click operations, manipulates layout structures on the fly, and connects APIs.
+                </p>
+            </div>
+
+            <!-- Box 4: Responsive Design -->
+            <div class="info-box box-resp">
+                <h3>4. Fluid Adaptation</h3>
+                <p>
+                    Responsive architecture guarantees formatting parameters scale elegantly across viewports. By organizing scalable dimensions, content shifts instantly to fit everything from ultra-wide monitors to mobile devices.
                 </p>
             </div>
 
         </div>
 
-        <button class="btn-action">Start Learning Web Dev</button>
+        <button class="btn-action">Unlock Master Academy</button>
     </div>
 
 </body>
