@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        /* Global Framework Styles */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #e0f2fe; /* Light Blue Background */
+            font-family: Cambria, Georgia, serif; 
+            font-size: 14px; /* Explicit 14px Base Font Size */
+            color: #1e3a8a; /* Deep Blue Text Accent */
+            
+            /* CSS Grid to center-align everything vertically and horizontally */
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Center Content Card Layout */
+        .container {
+            display: grid;
+            gap: 24px;
+            justify-items: center;
+            text-align: center;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.15);
+            max-width: 750px; /* Balanced layout width for dual grid columns */
+            width: 100%;
+            border: 1px solid #bfdbfe;
+        }
+
+        h1 {
+            color: #1d4ed8; 
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .tagline {
+            color: #2563eb;
+            font-style: italic;
+            margin: -12px 0 0 0;
+        }
+
+        /* CSS Scrolling Text (Ticker Layout) */
+        .ticker-window {
+            width: 100%;
+            overflow: hidden; 
+            background-color: #eff6ff; 
+            padding: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #93c5fd;
+        }
+
+        .ticker-stream {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            font-weight: bold;
+            color: #1d4ed8;
+            animation: move-left 14s linear infinite; 
+        }
+
+        @keyframes move-left {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        /* 2-Column Grid Layout for Content Feature Boxes */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns of equal size side-by-side */
+            gap: 20px;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        /* Custom Information Grid Box Styling */
+        .info-box {
+            background-color: #f8fafc; /* Very light slate tint */
+            padding: 24px;
+            border-radius: 10px;
+            border-top: 4px solid #2563eb; /* Highlighting top edge blue */
+            text-align: left; /* Aligned left for natural documentation parsing */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-2px); /* Subtle elevation adjustment on user hover focus */
+        }
+
+        .info-box h3 {
+            margin: 0 0 10px 0;
+            color: #1e3a8a;
+            font-size: 18px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 6px;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* Blue Button with White Text */
+        .btn-action {
+            background-color: #2563eb; 
+            color: #ffffff; 
+            font-family: Cambria, Georgia, serif;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 36px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .btn-action:hover {
+            background-color: #1d4ed8;
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p class="tagline">A Structural Guide to Basic Web Foundations</p>
+        
+        <!-- Smooth Accelerated CSS Scrolling Banner -->
+        <div class="ticker-window">
+            <div class="ticker-stream">
+                💡 Learning Focus: HTML5 provides structural layout semantic definitions • CSS3 manages structural design, styling rules, and grid coordinates. 🚀
+            </div>
+        </div>
+
+        <!-- 2-Column Responsive Information Grid Box Layer -->
+        <div class="info-grid">
+            
+            <!-- Box 1: HTML Architecture -->
+            <div class="info-box">
+                <h3>What is HTML?</h3>
+                <p>
+                    HTML stands for <strong>HyperText Markup Language</strong>. It acts as the backbone or skeletal structural element of every web page. Using markup elements called tags, it explicitly outlines what content should appear on the screen—such as text headings, media paragraphs, action fields, links, and text structures.
+                </p>
+            </div>
+
+            <!-- Box 2: CSS Presentation -->
+            <div class="info-box">
+                <h3>What is CSS?</h3>
+                <p>
+                    CSS stands for <strong>Cascading Style Sheets</strong>. If HTML is the skeleton, CSS represents the aesthetic clothing and spatial layout layout model. It allows developers to specify layout behaviors (like Grid Box layouts), typography styling selections, base sizing values, custom color palettes, background gradients, and smooth animation loops.
+                </p>
+            </div>
+
+        </div>
+
+        <button class="btn-action">Start Learning Web Dev</button>
+    </div>
+
+</body>
+</html>
