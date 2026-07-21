@@ -1,0 +1,84 @@
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    background:#f2f2f2;
+}
+
+/* Header */
+header{
+    background:#0066cc;
+    color:white;
+    padding:20px;
+}
+
+/* Navigation */
+nav{
+    background:#ff6600;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:20px;
+    font-weight:bold;
+
+    /* Transition */
+    transition:0.5s;
+}
+
+/* Transform */
+nav a:hover{
+    color:yellow;
+    transform:scale(1.2);
+}
+
+/* Hero Section */
+.hero{
+    background:#66cc66;
+    color:white;
+    padding:50px;
+}
+
+/* Button */
+button{
+    padding:10px 20px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+button:hover{
+    background:darkred;
+    transform:scale(1.1);
+}
+
+/* Animation */
+.bus{
+    font-size:60px;
+    position:relative;
+    margin-top:40px;
+    animation:moveBus 5s infinite;
+}
+
+@keyframes moveBus{
+    from{
+        left:-300px;
+    }
+
+    to{
+        left:300px;
+    }
+}
+
+/* Footer */
+footer{
+    background:#333;
+    color:white;
+    padding:15px;
+    margin-top:50px;
+}

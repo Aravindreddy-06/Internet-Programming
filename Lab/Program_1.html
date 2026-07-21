@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Transition & Transform Demo</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+    text-align:center;
+}
+
+h1{
+    margin:30px 0;
+    color:#333;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    padding:20px;
+}
+
+.box{
+    width:180px;
+    height:180px;
+    background:royalblue;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+
+    /* Transition */
+    transition: all 0.6s ease;
+}
+
+/* 1. Scale */
+.scale:hover{
+    transform:scale(1.2);
+    background:tomato;
+}
+
+/* 2. Rotate */
+.rotate:hover{
+    transform:rotate(45deg);
+    background:green;
+}
+
+/* 3. Translate */
+.translate:hover{
+    transform:translate(30px,-20px);
+    background:orange;
+}
+
+/* 4. Skew */
+.skew:hover{
+    transform:skew(20deg,10deg);
+    background:purple;
+}
+
+/* 5. Combined Transform */
+.combo:hover{
+    transform:scale(1.1) rotate(15deg) translateY(-15px);
+    background:deeppink;
+}
+
+/* 6. 3D Rotate */
+.threeD{
+    perspective:600px;
+}
+
+.threeD:hover{
+    transform:rotateY(180deg);
+    background:black;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>CSS Transition & Transform Example</h1>
+
+<div class="container">
+
+    <div class="box scale">
+        Scale
+    </div>
+
+    <div class="box rotate">
+        Rotate
+    </div>
+
+    <div class="box translate">
+        Translate
+    </div>
+
+    <div class="box skew">
+        Skew
+    </div>
+
+    <div class="box combo">
+        Combined
+    </div>
+
+    <div class="box threeD">
+        3D Rotate
+    </div>
+
+</div>
+
+</body>
+</html>
