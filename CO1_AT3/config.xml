@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+  <to>User</to>
+  <from>Admin</from>
+  <subject>Welcome</subject>
+  <message>Thank you for registering on our platform.</message>
+</note>

@@ -1,0 +1,12 @@
+{
+  "name": "web-standards-demo",
+  "version": "1.0.0",
+  "description": "Demo project for HTML5 video, semantic nav, POST form, XML config, and HTTP protocol",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
