@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Web Technologies Analysis Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(to right,#f8fbff,#eef5ff);
+color:#333;
+line-height:1.7;
+}
+
+
+/* HEADER */
+
+header{
+padding:50px;
+text-align:center;
+background:linear-gradient(135deg,#001f54,#034078,#1282a2);
+color:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+}
+
+
+/* NAVIGATION BAR */
+
+nav{
+position:sticky;
+top:0;
+background:white;
+padding:15px;
+text-align:center;
+box-shadow:0 3px 10px lightgray;
+z-index:100;
+}
+
+nav a{
+text-decoration:none;
+margin:8px;
+padding:10px 15px;
+background:#034078;
+color:white;
+border-radius:25px;
+font-size:15px;
+transition:0.3s;
+}
+
+nav a:hover{
+background:#1282a2;
+transform:scale(1.05);
+}
+
+
+/* MAIN CONTAINER */
+
+.container{
+width:92%;
+margin:auto;
+padding-bottom:40px;
+}
+
+
+/* CARDS */
+
+.card{
+background:rgba(255,255,255,0.9);
+backdrop-filter:blur(10px);
+padding:25px;
+margin-top:25px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h2{
+color:#034078;
+margin-bottom:15px;
+}
+
+
+/* COLLAPSIBLE BOX */
+
+details{
+margin-bottom:15px;
+}
+
+summary{
+cursor:pointer;
+font-weight:bold;
+font-size:17px;
+color:#001f54;
+padding:8px;
+}
+
+summary:hover{
+color:#1282a2;
+}
+
+
+/* ANSWER BOX */
+
+.answer{
+padding:15px;
+margin-top:10px;
+border-left:6px solid #1282a2;
+background:#f4f9ff;
+border-radius:5px;
+}
+
+
+/* CODE BLOCKS */
+
+pre{
+background:#eef5ff;
+padding:15px;
+border-radius:10px;
+overflow-x:auto;
+margin-top:15px;
+margin-bottom:15px;
+}
+
+
+/* TABLE */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+table,th,td{
+border:1px solid lightgray;
+}
+
+th{
+background:#034078;
+color:white;
+}
+
+th,td{
+padding:12px;
+text-align:center;
+}
+
+
+/* FLOW DIAGRAM */
+
+.flow{
+display:flex;
+flex-direction:column;
+align-items:center;
+font-weight:bold;
+margin-top:20px;
+}
+
+.step{
+background:#1282a2;
+color:white;
+padding:10px 20px;
+border-radius:30px;
+margin:5px;
+width:250px;
+text-align:center;
+}
+
+.arrow{
+font-size:28px;
+color:#034078;
+}
+
+
+/* FOOTER */
+
+footer{
+margin-top:40px;
+background:#001f54;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+
+/* LIST */
+
+ul{
+margin-left:25px;
+}
+
+ol{
+margin-left:25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<h1>Internet Programming Dashboard</h1>
+
+<p>
+Web Technologies, HTTP Communication & Browser-Server Analysis Portal
+</p>
+
+</header>
+
+
+<nav>
+
+<a href="#q1">HTTP</a>
+<a href="#q2">DOM</a>
+<a href="#q3">GET/POST</a>
+<a href="#q4">HTML</a>
+<a href="#q5">Browser Flow</a>
+<a href="#q6">Outcome</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<!-- QUESTION 1 -->
+
+<div class="card" id="q1">
+
+<h2>1. HTTP Response Analysis</h2>
+
+<pre>
+HTTP/1.1 200 OK
+Date: Mon, 01 Apr 2026 10:00:00 GMT
+Content-Type: text/html
+Content-Length: -150
+Connection: keep-alive
+</pre>
+
+<details open>
+<summary>Identify Invalid Fields</summary>
+<div class="answer">
+Content-Length is invalid because HTTP headers cannot have negative values.
+</div>
+</details>
+
+<details>
+<summary>Content-Length Issue</summary>
+<div class="answer">
+The browser uses Content-Length to determine the size of the response body. A negative value may prevent proper rendering of the webpage.
+</div>
+</details>
+
+<details>
+<summary>Status Code Analysis</summary>
+<div class="answer">
+Although 200 OK indicates success, the invalid header makes the response technically incorrect.
+</div>
+</details>
+
+<details>
+<summary>Suggested Correction</summary>
+<div class="answer">
+Replace Content-Length: -150 with a positive value such as Content-Length: 150.
+</div>
+</details>
+
+</div>
+
+
+
+<!-- QUESTION 2 -->
+
+<div class="card" id="q2">
+
+<h2>2. DOM Structure Analysis</h2>
+
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Test Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div&gt;
+&lt;p&gt;Hello World
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<details open>
+<summary>Missing Elements</summary>
+<div class="answer">
+The paragraph tag is not properly closed.
+</div>
+</details>
+
+<details>
+<summary>Browser Interpretation</summary>
+<div class="answer">
+Modern browsers automatically close missing tags whenever possible.
+</div>
+</details>
+
+<details>
+<summary>Rendering Impact</summary>
+<div class="answer">
+The webpage may display correctly but does not follow HTML standards.
+</div>
+</details>
+
+<details>
+<summary>Suggested Correction</summary>
+<div class="answer">
+Add the missing &lt;/p&gt; tag before the closing div tag.
+</div>
+</details>
+
+</div>
+
+
+
+<!-- QUESTION 3 -->
+
+<div class="card" id="q3">
+
+<h2>3. GET vs POST in Login System</h2>
+
+<table>
+
+<tr>
+<th>Method</th>
+<th>URL</th>
+<th>Visibility</th>
+<th>Security</th>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>/login?user=admin</td>
+<td>Visible</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>/login</td>
+<td>Hidden</td>
+<td>Moderate</td>
+</tr>
+
+</table>
+
+<br>
+
+<details open>
+<summary>Data Transmission</summary>
+<div class="answer">
+GET sends data through URLs whereas POST sends data through the request body.
+</div>
+</details>
+
+<details>
+<summary>Suitable Method</summary>
+<div class="answer">
+POST is recommended for login systems because credentials are not visible in the address bar.
+</div>
+</details>
+
+<details>
+<summary>Security Risks</summary>
+<div class="answer">
+GET requests expose sensitive information in browser history and server logs.
+</div>
+</details>
+
+<details>
+<summary>Best Practices</summary>
+<div class="answer">
+
+<ul>
+
+<li>Use POST requests.</li>
+<li>Use HTTPS.</li>
+<li>Use secure password hashing.</li>
+<li>Implement session management.</li>
+
+</ul>
+
+</div>
+</details>
+
+</div>
+
+
+
+<!-- QUESTION 4 -->
+
+<div class="card" id="q4">
+
+<h2>4. HTML Code Inspection</h2>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Sample&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome
+&lt;p&gt;This is a paragraph
+&lt;img src="image.jpg"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<details open>
+<summary>Missing Tags</summary>
+<div class="answer">
+The closing tags for h1 and paragraph elements are missing.
+</div>
+</details>
+
+<details>
+<summary>Image Tag Issues</summary>
+<div class="answer">
+The image element should include an alt attribute for accessibility purposes.
+</div>
+</details>
+
+<details>
+<summary>Browser Handling</summary>
+<div class="answer">
+Browsers attempt to automatically correct minor HTML errors.
+</div>
+</details>
+
+<details>
+<summary>Correct Version</summary>
+<div class="answer">
+
+<pre>
+&lt;h1&gt;Welcome&lt;/h1&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;img src="image.jpg"
+alt="Sample Image"&gt;
+</pre>
+
+</div>
+</details>
+
+</div>
+
+
+
+<!-- QUESTION 5 -->
+
+<div class="card" id="q5">
+
+<h2>5. Browser-Server Communication Flow</h2>
+
+<div class="flow">
+
+<div class="step">User Enters URL</div>
+<div class="arrow">↓</div>
+
+<div class="step">DNS Lookup</div>
+<div class="arrow">↓</div>
+
+<div class="step">HTTP Request</div>
+<div class="arrow">↓</div>
+
+<div class="step">Server Processing</div>
+<div class="arrow">↓</div>
+
+<div class="step">HTTP Response</div>
+<div class="arrow">↓</div>
+
+<div class="step">Browser Rendering</div>
+<div class="arrow">↓</div>
+
+<div class="step">Webpage Display</div>
+
+</div>
+
+
+<br>
+
+<details open>
+<summary>Communication Process</summary>
+<div class="answer">
+The browser communicates with the server through DNS resolution, HTTP requests, and response rendering mechanisms.
+</div>
+</details>
+
+<details>
+<summary>Possible Delays</summary>
+<div class="answer">
+Network latency, DNS lookup time, server response time, and browser rendering may introduce delays.
+</div>
+</details>
+
+<details>
+<summary>Role of DNS</summary>
+<div class="answer">
+DNS converts domain names into IP addresses to establish communication with web servers.
+</div>
+</details>
+
+<details>
+<summary>Performance Optimization</summary>
+<div class="answer">
+
+<ul>
+
+<li>DNS Caching</li>
+<li>Browser Caching</li>
+<li>Content Delivery Networks (CDNs)</li>
+<li>Compressed Web Resources</li>
+<li>Optimized Server Responses</li>
+
+</ul>
+
+</div>
+</details>
+
+</div>
+
+
+
+<!-- QUESTION 6 -->
+
+<div class="card" id="q6">
+
+<h2>6. Learning Outcome (L2)</h2>
+
+<p>
+Develop well-structured, standards-compliant web pages using HTML/XHTML and XML, and apply Internet protocols and HTTP communication mechanisms for web content delivery.
+</p>
+
+<br>
+
+<h3>Skills Demonstrated</h3>
+
+<ul>
+
+<li>HTTP Header Analysis</li>
+<li>DOM Validation Techniques</li>
+<li>Secure GET and POST Request Handling</li>
+<li>HTML Standards Compliance</li>
+<li>Browser and Server Communication Mechanisms</li>
+<li>Web Performance Optimization Techniques</li>
+
+</ul>
+
+</div>
+
+
+
+</div>
+
+
+<footer>
+
+<h3>Internet Programming Laboratory Assignment</h3>
+
+<p>
+Designed using HTML5 & CSS3 | Standards-Compliant Web Development
+</p>
+
+<br>
+
+<p>
+Web Technologies & HTTP Communication Dashboard
+</p>
+
+</footer>
+
+
+</body>
+</html>

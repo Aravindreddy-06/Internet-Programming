@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CO-1 Technical Report Dashboard</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Segoe UI, sans-serif;
+    background:#F4F6F9;
+    color:#333;
+}
+
+/* Header */
+
+header{
+    background:#0A2647;
+    color:white;
+    padding:30px;
+    text-align:center;
+}
+
+header h1{
+    font-size:38px;
+}
+
+header p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* Navigation */
+
+nav{
+    background:#144272;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#FFD369;
+}
+
+/* Container */
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+    padding:20px;
+}
+
+/* Cards */
+
+.card{
+    background:white;
+    padding:25px;
+    margin-top:25px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.08);
+}
+
+.card h2{
+    color:#0A2647;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-top:15px;
+    color:#144272;
+}
+
+/* Code */
+
+pre{
+    background:#1E1E1E;
+    color:#7CFC00;
+    padding:15px;
+    border-radius:8px;
+    overflow-x:auto;
+    margin-top:10px;
+}
+
+/* Table */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+table,th,td{
+    border:1px solid #ccc;
+}
+
+th{
+    background:#0A2647;
+    color:white;
+}
+
+th,td{
+    padding:12px;
+    text-align:left;
+}
+
+/* Workflow */
+
+.workflow{
+    text-align:center;
+    line-height:2;
+    font-weight:bold;
+    color:#0A2647;
+    margin-top:15px;
+}
+
+/* Lists */
+
+ul{
+    margin-left:25px;
+    margin-top:10px;
+    line-height:1.9;
+}
+
+.footer{
+    text-align:center;
+    background:#0A2647;
+    color:white;
+    padding:20px;
+    margin-top:30px;
+}
+
+.highlight{
+    color:#0A2647;
+    font-weight:bold;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<h1>INTERNET PROGRAMMING</h1>
+<h2>CO-1 TECHNICAL REPORT DASHBOARD</h2>
+
+<p>
+Develop well-structured, standards-compliant web pages using HTML/XHTML and XML,
+and apply Internet protocols and HTTP communication mechanisms for web content delivery.
+</p>
+
+</header>
+
+
+
+<nav>
+
+<a href="#overview">Overview</a>
+<a href="#case1">Case Study 1</a>
+<a href="#case2">Case Study 2</a>
+<a href="#case3">Case Study 3</a>
+<a href="#summary">Summary</a>
+
+</nav>
+
+
+<div class="container">
+
+<!-- Overview -->
+
+<div class="card" id="overview">
+
+<h2>Assessment Overview</h2>
+
+<table>
+
+<tr>
+<th>Assessment Type</th>
+<td>Application-Based Questions</td>
+</tr>
+
+<tr>
+<th>Weightage</th>
+<td>40%</td>
+</tr>
+
+<tr>
+<th>Total Marks</th>
+<td>30</td>
+</tr>
+
+<tr>
+<th>Course Outcome</th>
+<td>Standards-Compliant Web Development & HTTP Communication</td>
+</tr>
+
+</table>
+
+</div>
+
+
+
+<!-- Case Study 1 -->
+
+<div class="card" id="case1">
+
+<h2>Case Study 1 : Online Symposium Portal</h2>
+
+<h3>Existing HTML Structure</h3>
+
+<pre>
+&lt;form action="/register" method="POST"&gt;
+<input type="text" name="name">
+<input type="email" name="email">
+<button>Submit</button>
+&lt;/form&gt;
+</pre>
+
+<h3>Technical Analysis</h3>
+
+<ul>
+<li>Missing semantic HTML5 elements.</li>
+<li>Form labels are not provided.</li>
+<li>Accessibility features are missing.</li>
+<li>HTTP communication needs explanation.</li>
+</ul>
+
+<h3>Recommended Standards-Compliant Structure</h3>
+
+<pre>
+<header>
+<h1>Symposium Registration</h1>
+</header>
+
+<main>
+<section>
+
+<form action="/register" method="POST">
+
+<label>Name</label>
+<input type="text" required>
+
+<label>Email</label>
+<input type="email" required>
+
+<button type="submit">
+Submit
+</button>
+
+</form>
+
+</section>
+</main>
+</pre>
+
+<h3>HTTP Request & Response Workflow</h3>
+
+<div class="workflow">
+
+Student Browser<br>
+↓<br>
+HTML Form Submission<br>
+↓<br>
+HTTP POST Request<br>
+↓<br>
+Web Server Processing<br>
+↓<br>
+HTTP Response Generated<br>
+↓<br>
+Registration Confirmation
+
+</div>
+
+<h3>Accessibility Improvements</h3>
+
+<ul>
+<li>Use semantic HTML5 tags.</li>
+<li>Add labels and required attributes.</li>
+<li>Provide form validation.</li>
+<li>Improve keyboard navigation.</li>
+</ul>
+
+</div>
+
+
+
+
+<!-- Case Study 2 -->
+
+<div class="card" id="case2">
+
+<h2>Case Study 2 : Cross-Browser Compatibility Issue</h2>
+
+<h3>Existing HTML Structure</h3>
+
+<pre>
+<html>
+<head>
+<title>Company</title>
+</head>
+
+<body>
+
+<div>
+<h1>Welcome
+<p>About us
+
+</div>
+
+</body>
+</html>
+</pre>
+
+
+<h3>Identified Issues</h3>
+
+<ul>
+
+<li>Missing closing tags.</li>
+<li>Improper nesting of HTML elements.</li>
+<li>Missing semantic elements.</li>
+<li>Browser rendering inconsistencies.</li>
+
+</ul>
+
+
+<h3>Correct HTML Structure</h3>
+
+<pre>
+<!DOCTYPE html>
+
+<html>
+
+<header>
+<h1>Welcome</h1>
+</header>
+
+<main>
+
+<section>
+<p>About Us</p>
+</section>
+
+</main>
+
+</html>
+</pre>
+
+
+<h3>Cross-Browser Compatibility Techniques</h3>
+
+<ul>
+
+<li>Validate HTML using W3C standards.</li>
+<li>Use semantic HTML5 elements.</li>
+<li>Implement responsive design.</li>
+<li>Perform browser testing.</li>
+<li>Avoid deprecated tags.</li>
+
+</ul>
+
+</div>
+
+
+
+
+<!-- Case Study 3 -->
+
+<div class="card" id="case3">
+
+<h2>Case Study 3 : Form Submission Failure</h2>
+
+<h3>Existing HTML Structure</h3>
+
+<pre>
+<form action="/submit" method="GET">
+
+<input type="text" name="username">
+
+<input type="password"
+name="password">
+
+<button type="button">
+Login
+</button>
+
+</form>
+</pre>
+
+
+<h3>Root Cause Analysis</h3>
+
+<ul>
+
+<li>Button type is incorrect.</li>
+<li>GET method exposes form data.</li>
+<li>Password transmission is insecure.</li>
+
+</ul>
+
+
+<h3>Correct Implementation</h3>
+
+<pre>
+<form action="/submit"
+method="POST">
+
+<label>Username</label>
+
+<input type="text"
+required>
+
+<label>Password</label>
+
+<input type="password"
+required>
+
+<button type="submit">
+Login
+</button>
+
+</form>
+</pre>
+
+
+<h3>Secure Data Transmission Techniques</h3>
+
+<ul>
+
+<li>Use POST method.</li>
+<li>Implement HTTPS.</li>
+<li>Validate user inputs.</li>
+<li>Encrypt sensitive information.</li>
+<li>Apply secure authentication mechanisms.</li>
+
+</ul>
+
+
+<h3>HTTP Communication Workflow</h3>
+
+<div class="workflow">
+
+User Login Request<br>
+↓<br>
+HTTP POST Method<br>
+↓<br>
+Secure Data Transmission<br>
+↓<br>
+Server Authentication<br>
+↓<br>
+HTTP Response<br>
+↓<br>
+Successful Login
+
+</div>
+
+</div>
+
+
+
+
+<!-- Summary -->
+
+<div class="card" id="summary">
+
+<h2>Technical Summary Dashboard</h2>
+
+<table>
+
+<tr>
+<th>Feature</th>
+<th>Status</th>
+<th>Improvement</th>
+</tr>
+
+<tr>
+<td>Semantic HTML</td>
+<td>Implemented</td>
+<td>HTML5 Tags</td>
+</tr>
+
+<tr>
+<td>Accessibility</td>
+<td>Enhanced</td>
+<td>Labels & Validation</td>
+</tr>
+
+<tr>
+<td>HTTP Communication</td>
+<td>Explained</td>
+<td>Request & Response Cycle</td>
+</tr>
+
+<tr>
+<td>Browser Compatibility</td>
+<td>Improved</td>
+<td>W3C Standards</td>
+</tr>
+
+<tr>
+<td>Security</td>
+<td>Enhanced</td>
+<td>HTTPS & POST Method</td>
+</tr>
+
+<tr>
+<td>Usability</td>
+<td>Improved</td>
+<td>Responsive Design Practices</td>
+</tr>
+
+</table>
+
+
+<h3>Outcome Achieved</h3>
+
+<ul>
+
+<li>Standards-compliant HTML structures are implemented.</li>
+<li>HTTP request and response mechanisms are clearly analyzed.</li>
+<li>Cross-browser compatibility issues are addressed.</li>
+<li>Secure form submission techniques are recommended.</li>
+<li>Accessibility and usability improvements are incorporated.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+
+<div class="footer">
+
+<h3>Internet Programming Laboratory</h3>
+
+<p>
+CO-1 Technical Report Dashboard | HTML5 | HTTP Protocols |
+Standards-Compliant Web Design
+</p>
+
+</div>
+
+</body>
+</html>
